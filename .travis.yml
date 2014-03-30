@@ -4,7 +4,7 @@ node_js:
 deploy: 
   secret_access_key: 
     secure: h5K/GiDaLTOj6/uhgYdADnIs0j2bLY3jzqOrxmd3g+w0y8XrJRmOv/YgiT5Wak6F07/9a8rclyDVfGHyjbWobyZUgo8jnZZEYvWD+FBbLNxlUZt4r0vaaeKpZbgO4Iel43WHVIp1qapk7lO69vqVnPiUciupGLgCrb3FWBqc1ZA=
-  upload-dir: make.stanleygeorge.com
+  #upload-dir: make.stanleygeorge.com
   bucket: "make.stanleygeorge.com"
   local-dir: out
   access_key_id: 
