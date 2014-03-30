@@ -1,11 +1,12 @@
-#http://docs.travis-ci.com/user/deployment/s3/
-deploy:
-  provider: s3
-  access_key_id: "" #YOUR AWS ACCESS KEY
-  secret_access_key: "" #YOUR AWS SECRET KEY
-  bucket: "S3 Bucket"
-  skip_cleanup: true
-  local-dir: out
+deploy: 
+  secret_access_key: 
+    secure: h5K/GiDaLTOj6/uhgYdADnIs0j2bLY3jzqOrxmd3g+w0y8XrJRmOv/YgiT5Wak6F07/9a8rclyDVfGHyjbWobyZUgo8jnZZEYvWD+FBbLNxlUZt4r0vaaeKpZbgO4Iel43WHVIp1qapk7lO69vqVnPiUciupGLgCrb3FWBqc1ZA=
   upload-dir: make.stanleygeorge.com
-on:
+  bucket: S3 Bucket
+  local-dir: out
+  access_key_id: 
+    secure: bjvy4gx+bq5YZmPCz/TolRmMtWCiJVxAbBbSaygpSlQ4GBQFAUdyicrowgAQHdnEQ1atqP2P8wsLJYdqOCZVdA8wHnPzIm9bvlnw0xV2jv4PkAPp9KWFdqVGBTR1vbDwBjoYqeIXRLo2QjrkAr6cIDSrYnawalvE3y9zCAAPA3Y=
+  provider: s3
+  skip_cleanup: true
+true: 
   tags: true
