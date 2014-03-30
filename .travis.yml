@@ -8,5 +8,5 @@ deploy:
     secure: bjvy4gx+bq5YZmPCz/TolRmMtWCiJVxAbBbSaygpSlQ4GBQFAUdyicrowgAQHdnEQ1atqP2P8wsLJYdqOCZVdA8wHnPzIm9bvlnw0xV2jv4PkAPp9KWFdqVGBTR1vbDwBjoYqeIXRLo2QjrkAr6cIDSrYnawalvE3y9zCAAPA3Y=
   provider: s3
   skip_cleanup: true
-true: 
-  tags: true
+#on: 
+#  tags: true
