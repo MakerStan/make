@@ -1,0 +1,20 @@
+---
+title: "Edit Amazon S3 Files on Linux"
+author: "MakerStan"
+created: "March 24, 2014"
+edited: "March 27, 2014"
+layout: "default"
+isPage: true
+preview: "You can use Amazon Command Line Interface (CLI) to edit Amazon S3 files locally and  upload them using the sync command. This tool can be installed on Linux and you can use your favourite editor."
+---
+If you need to edit files on Windows or Mac, please visit [this link](edit-amazon-s3-files.html).
+
+Edit [Amazon S3](http://en.wikipedia.org/wiki/Amazon_S3) files locally on Linux using [Amazon CLI](http://aws.amazon.com/cli/). Saving the local changes does NOT automatically upload the file to Amazon S3. Once you are done editing, you need to run the sync command to upload the updated files. The code snippets below show how to setup, login, view and edit the files.
+
+<gist>9865462?file=install-amazon-cli.sh</gist>
+
+If you need to manage a lot of pages, a tool like DocPad will help. See [this post](static-website-docpad.html) on how to create a static website or blog with Docpad.
+
+**External Links**
+1. For additional setup details visit [this link](http://docs.aws.amazon.com/cli/latest/userguide/using-s3-commands.html).
+2. If you want to host a static website/blog on Amazon S3 then check out [this post](http://chadthompson.me/2013/05/06/static-web-hosting-with-amazon-s3/) by Chad Thompson.

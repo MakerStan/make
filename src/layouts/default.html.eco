@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name=viewport content="width=device-width, initial-scale=1.0">
+<meta name=description content="<%= @document.preview%>">
+<meta name=author content="<%= @document.author%>">
+<title><%= @document.title %> | Make</title>
+<%- @getBlock("meta").toHTML() %>
+<%- @getBlock("styles").toHTML() %>
+<link rel=stylesheet href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+<link href="http://d27jzba8aj5ptt.cloudfront.net/jumbotron-narrow.min.css" rel=stylesheet>
+<!--[if lt IE 9]>
+      <script src="../../assets/js/html5shiv.js"></script>
+      <script src="../../assets/js/respond.min.js"></script>
+    <![endif]-->
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-43034225-4','stanleygeorge.com');ga('send','pageview');</script>
+</head>
+<body>
+  <div class=container>
+    <div class=header>
+      <h2 class=text-muted>
+        <a href="index.html">Home / </a><%= @document.title %>
+      </h2>
+    </div>
+    <div class=jumbotron><p class=lead style="text-align:justify;">
+      <%= @document.preview%>
+    </div>
+    <p style="text-align:justify;">
+      <%- @content %>
+      <%- @getBlock("scripts").toHTML() %>
+    </p>
+    <div class=footer>
+      Created by <%= @document.author%> on <%= @document.created%>. Last updated on <%= @document.edited%>.<br />
+      <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/4.0/80x15.png" /></a> This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+    </div>
+  </div>
+</body>
+</html>
