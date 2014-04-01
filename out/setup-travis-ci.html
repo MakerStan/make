@@ -38,6 +38,8 @@
 <p>Setup a file named .travis.yml in your git directory as below. This will hook git to travis-ci</p>
 <script src='https://gist.github.com/9865462.js?file=.travis.yml'></script>
 
+<p>Now when you commit to git, a Travis-CI build will be triggered. <a href="https://travis-ci.org/MakerStan/make/builds/21890084">This</a> is how a sample build looks like. You will also need to add a <a href="https://gist.githubusercontent.com/MakerStan/9865462/raw/47dd49d302a87c9fe0855bb35c4afdb81614c9cc/amazon-s3-bucket-policy-json">policy</a> on your Amazon S3 bucket so that all files uploaded to it are public read</p>
+<p>If you prefer not to use either GitHub or Travis-CI and prefer to upload the files manually to Amazon S3, see <a href="edit-amazon-s3-files-linux.html">this post</a> on using Amazon CLI tool.</p>
 <p><strong>External Links</strong></p>
 <ol>
 <li>Details on getting started with Travis-CI can be found <a href="http://docs.travis-ci.com/user/getting-started/">here</a>.</li>
