@@ -7,7 +7,7 @@ layout: "default"
 isPage: true
 preview: "Posts on Cloud, Software and Electronics."
 ---
-I maintain this site to share some of the things I am interested in. This site has no ads, no affiliate links, no donations and I plan to keep it that way. The posts here are on how to do something and why.
+I maintain this site to share some tools and technologies that I play with. The posts here are on how to do something and why. This site does not have any ads or popups or affiliate links.
 
 Cloud
 <br />
