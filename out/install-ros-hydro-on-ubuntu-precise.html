@@ -43,8 +43,18 @@ I selected &#39;No&#39; to the following question that showed up during the inst
 <p><pre>Should the hddtemp daemon be started at boot?</pre>
 If you are also interested in installing the Gazebo Simulator for ROS, please see this post: <a href="install-gazebo-ros-on-ubuntu-precise.html">install-gazebo-ros-on-ubuntu-precise.html</a></p>
 <p>Run the following scripts to setup sources, keys, install and setup the environment.</p>
-<script src='https://gist.github.com/9862679.js?file=install-ros-hydro-on-ubuntu-precise.sh'></script>
-
+<p><pre>
+sudo sh -c &#39;echo &quot;deb <a href="http://packages.ros.org/ros/ubuntu">http://packages.ros.org/ros/ubuntu</a> precise main&quot; &gt; /etc/apt/sources.list.d/ros-latest.list&#39;</p>
+<p>wget <a href="http://packages.ros.org/ros.key">http://packages.ros.org/ros.key</a> -O - | sudo apt-key add -
+sudo apt-get update
+sudo apt-get install ros-hydro-desktop-full
+sudo rosdep init
+rosdep update
+echo &quot;source /opt/ros/hydro/setup.bash&quot; &gt;&gt; ~/.bashrc
+source ~/.bashrc
+sudo apt-get install python-rosinstall
+</pre>
+Here is the <a href="https://gist.githubusercontent.com/MakerStan/9862679/raw/install-ros-hydro-on-ubuntu-precise.sh">raw</a> version of the script above.</p>
 <p>I ran this command to for a basic check to see if ROS was installed correctly: <code>rospack find opencv2</code></p>
 <p>If you plan to use <a href="http://gazebosim.org/">Gazebo Simulator</a> with ROS, please see <a href="install-gazebo-ros-on-ubuntu-precise.html">this post</a></p>
 <p><strong>External Links</strong></p>

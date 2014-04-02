@@ -11,7 +11,25 @@ If you need to edit files on Windows or Mac, please visit [this link](edit-amazo
 
 Edit [Amazon S3](http://en.wikipedia.org/wiki/Amazon_S3) files locally on Linux using [Amazon CLI](http://aws.amazon.com/cli/). Saving the local changes does NOT automatically upload the file to Amazon S3. Once you are done editing, you need to run the sync command to upload the updated files. The code snippets below show how to setup, login, view and edit the files.
 
-<gist>9865462?file=install-amazon-cli.sh</gist>
+<pre>
+sudo apt-get install python-pip *#Install pip*
+sudo pip install awscli *#Install the awscli python package*
+aws help *#Test to see if the install went well*
+
+*\#Configure Amazon Access Key ID, Secret Access Key, Default region name.*
+aws configure *#This info is stored in this file: ~/.aws/config*
+
+*\#This will list all files in the bucket called make.stanleygeorge.com*
+aws s3 ls s3://make.stanleygeorge.com
+
+*\#This will copy all the files from the S3 bucket to the current directory*
+aws s3 sync s3://make.stanleygeorge.com .
+
+*\#This will copy all the files from the current directory to the S3 bucket.*
+*\#The 'grants' option grants read permissions on the files to everyone.*
+aws s3 sync . s3://make.stanleygeorge.com --grants read=uri=http://acs.amazonaws.com/groups/global/AllUsers
+</pre>
+Here is the [raw](https://gist.githubusercontent.com/MakerStan/9865462/raw/install-amazon-cli.sh) version of the script above.
 
 If you need to manage a lot of pages, a tool like DocPad will help. See [this post](static-website-docpad.html) on how to create a static website or blog with Docpad.
 

@@ -13,13 +13,27 @@ If you are interested in using the [Gazebo Simulator](http://gazebosim.org/) wit
 NOTE: If you installed the full desktop version of ROS, then Gazebo is installed along with it and you can skip the install steps below and jump to the verification step.
 
 Run the following scripts to setup sources, keys, install and setup the environment
-<gist>9862679?file=install-gazebo-ros-on-ubuntu-precise.sh</gist>
+<pre>
+sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu precise main" > /etc/apt/sources.list.d/gazebo-latest.list'
+wget http://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
+sudo apt-get update
+sudo apt-get install gazebo
+</pre>
+Here is the [raw](https://gist.githubusercontent.com/MakerStan/9862679/raw/install-gazebo-ros-on-ubuntu-precise.sh) version of the script above.
 
 Check your installation using the following.
-<gist>9862679?file=check-gazebo-install.sh</gist>
+<pre>
+gzserver # This will start the server
+gzclient # This will start the GUI
+gazebo # This command should openup a GUI if Gazebo was installed correctly.
+</pre>
+Here is the [raw](https://gist.githubusercontent.com/MakerStan/9862679/raw//check-gazebo-install.sh) version of the script above.
 
 For Gazebo with ROS, do the following.
-<gist>9862679?file=install-gazebo-ros.sh</gist>
+<pre>
+sudo apt-get install ros-hydro-gazebo-ros-pkgs ros-hydro-gazebo-ros-control
+</pre>
+Here is the [raw](https://gist.githubusercontent.com/MakerStan/9862679/raw//install-gazebo-ros.sh) version of the script above.
 
 **External Links**
 1. Click [this link](http://gazebosim.org/wiki/1.9/install) for detailed instructions on Gazebo installation.

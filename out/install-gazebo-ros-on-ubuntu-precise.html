@@ -35,14 +35,25 @@
       <p>If you are interested in using the <a href="http://gazebosim.org/">Gazebo Simulator</a> with Robot Operating System <a href="http://www.ros.org/">(ROS)</a>, please insgtall ROS first using instructions <a href="install-ros-hydro-on-ubuntu-precise.html">here</a>.</p>
 <p>NOTE: If you installed the full desktop version of ROS, then Gazebo is installed along with it and you can skip the install steps below and jump to the verification step.</p>
 <p>Run the following scripts to setup sources, keys, install and setup the environment</p>
-<script src='https://gist.github.com/9862679.js?file=install-gazebo-ros-on-ubuntu-precise.sh'></script>
-
+<p><pre>
+sudo sh -c &#39;echo &quot;deb <a href="http://packages.osrfoundation.org/gazebo/ubuntu">http://packages.osrfoundation.org/gazebo/ubuntu</a> precise main&quot; &gt; /etc/apt/sources.list.d/gazebo-latest.list&#39;
+wget <a href="http://packages.osrfoundation.org/gazebo.key">http://packages.osrfoundation.org/gazebo.key</a> -O - | sudo apt-key add -
+sudo apt-get update
+sudo apt-get install gazebo
+</pre>
+Here is the <a href="https://gist.githubusercontent.com/MakerStan/9862679/raw/install-gazebo-ros-on-ubuntu-precise.sh">raw</a> version of the script above.</p>
 <p>Check your installation using the following.</p>
-<script src='https://gist.github.com/9862679.js?file=check-gazebo-install.sh'></script>
-
+<p><pre>
+gzserver # This will start the server
+gzclient # This will start the GUI
+gazebo # This command should openup a GUI if Gazebo was installed correctly.
+</pre>
+Here is the <a href="https://gist.githubusercontent.com/MakerStan/9862679/raw//check-gazebo-install.sh">raw</a> version of the script above.</p>
 <p>For Gazebo with ROS, do the following.</p>
-<script src='https://gist.github.com/9862679.js?file=install-gazebo-ros.sh'></script>
-
+<p><pre>
+sudo apt-get install ros-hydro-gazebo-ros-pkgs ros-hydro-gazebo-ros-control
+</pre>
+Here is the <a href="https://gist.githubusercontent.com/MakerStan/9862679/raw//install-gazebo-ros.sh">raw</a> version of the script above.</p>
 <p><strong>External Links</strong></p>
 <ol>
 <li>Click <a href="http://gazebosim.org/wiki/1.9/install">this link</a> for detailed instructions on Gazebo installation.</li>

@@ -9,10 +9,33 @@ preview: "You can use Docpad to create a static website. Static sites can be hos
 footer: "Thank you for visiting." 
 ---
 Create a static website or blog using [Docpad](http://docpad.org). The code snippets below show how to setup, view and edit the files. Since DocPad is based on [Node.js](http://nodejs.org/), we start by installing that.
-<gist>9865462?file=install-nodejs.sh</gist>
+<pre>
+sudo apt-get update && sudo apt-get install curl build-essential openssl libssl-dev git python
+ 
+curl https://raw.github.com/creationix/nvm/v0.3.0/install.sh | sh #Install Node Version Manager
+source .nvm/nvm.sh #Source the file
+ 
+nvm install v0.10.26 #Install the latest version of NodeJS
+nvm alias default 0.10
+nvm use 0.10
+</pre>
+
+Here is a [raw](https://gist.githubusercontent.com/MakerStan/9865462/raw/install-nodejs.sh) version of the script above.
 
 Install docpad and plugins for eco, livereload, markdown, coffeescript
-<gist>9865462?file=install-docpad-and-plugins.sh</gist>
+<pre>
+npm install -g npm; npm install -g docpad@6.64
+docpad install eco #template engine
+docpad install livereload #automatic browser refresh
+docpad install marked #markdown support
+docpad install coffeescript #javascript preprocessor
+docpad install gist #embed code snippets from GitHub Gist
+ 
+docpad run #start the process that monitors file changes and refreshes the browser
+</pre>
+
+Here is a [raw](https://gist.githubusercontent.com/MakerStan/9865462/raw/install-docpad-and-plugins.sh) version of the script above.
+
 The [Beginner Guide](http://docpad.org/docs/begin) has a good explanation of why we need the plugins. Here is a short description of what they do:
 1. [Eco](https://github.com/sstephenson/eco) lets us have templates so we can reuse code
 2. [livereload](https://github.com/docpad/docpad-plugin-livereload) enables automatic browser refreshes when files are changed

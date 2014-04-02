@@ -34,8 +34,21 @@
     <p style="text-align:justify;">
       <p>If you need to edit files on Windows or Mac, please visit <a href="edit-amazon-s3-files.html">this link</a>.</p>
 <p>Edit <a href="http://en.wikipedia.org/wiki/Amazon_S3">Amazon S3</a> files locally on Linux using <a href="http://aws.amazon.com/cli/">Amazon CLI</a>. Saving the local changes does NOT automatically upload the file to Amazon S3. Once you are done editing, you need to run the sync command to upload the updated files. The code snippets below show how to setup, login, view and edit the files.</p>
-<script src='https://gist.github.com/9865462.js?file=install-amazon-cli.sh'></script>
-
+<p><pre>
+sudo apt-get install python-pip <em>#Install pip</em>
+sudo pip install awscli <em>#Install the awscli python package</em>
+aws help <em>#Test to see if the install went well</em></p>
+<p><em>#Configure Amazon Access Key ID, Secret Access Key, Default region name.</em>
+aws configure <em>#This info is stored in this file: ~/.aws/config</em></p>
+<p><em>#This will list all files in the bucket called make.stanleygeorge.com</em>
+aws s3 ls s3://make.stanleygeorge.com</p>
+<p><em>#This will copy all the files from the S3 bucket to the current directory</em>
+aws s3 sync s3://make.stanleygeorge.com .</p>
+<p><em>#This will copy all the files from the current directory to the S3 bucket.</em>
+<em>#The &#39;grants&#39; option grants read permissions on the files to everyone.</em>
+aws s3 sync . s3://make.stanleygeorge.com --grants read=uri=<a href="http://acs.amazonaws.com/groups/global/AllUsers">http://acs.amazonaws.com/groups/global/AllUsers</a>
+</pre>
+Here is the <a href="https://gist.githubusercontent.com/MakerStan/9865462/raw/install-amazon-cli.sh">raw</a> version of the script above.</p>
 <p>If you need to manage a lot of pages, a tool like DocPad will help. See <a href="static-website-docpad.html">this post</a> on how to create a static website or blog with Docpad.</p>
 <p><strong>External Links</strong></p>
 <ol>

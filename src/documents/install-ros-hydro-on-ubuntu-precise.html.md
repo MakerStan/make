@@ -19,7 +19,19 @@ I selected 'No' to the following question that showed up during the install
 If you are also interested in installing the Gazebo Simulator for ROS, please see this post: [install-gazebo-ros-on-ubuntu-precise.html](install-gazebo-ros-on-ubuntu-precise.html)
 
 Run the following scripts to setup sources, keys, install and setup the environment.
-<gist>9862679?file=install-ros-hydro-on-ubuntu-precise.sh</gist>
+<pre>
+sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu precise main" > /etc/apt/sources.list.d/ros-latest.list'
+
+wget http://packages.ros.org/ros.key -O - | sudo apt-key add -
+sudo apt-get update
+sudo apt-get install ros-hydro-desktop-full
+sudo rosdep init
+rosdep update
+echo "source /opt/ros/hydro/setup.bash" >> ~/.bashrc
+source ~/.bashrc
+sudo apt-get install python-rosinstall
+</pre>
+Here is the [raw](https://gist.githubusercontent.com/MakerStan/9862679/raw/install-ros-hydro-on-ubuntu-precise.sh) version of the script above.
 
 I ran this command to for a basic check to see if ROS was installed correctly: <code>rospack find opencv2</code>
 

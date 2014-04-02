@@ -33,11 +33,32 @@
     </div>
     <p style="text-align:justify;">
       <p>Create a static website or blog using <a href="http://docpad.org">Docpad</a>. The code snippets below show how to setup, view and edit the files. Since DocPad is based on <a href="http://nodejs.org/">Node.js</a>, we start by installing that.</p>
-<script src='https://gist.github.com/9865462.js?file=install-nodejs.sh'></script>
+<pre>
+sudo apt-get update && sudo apt-get install curl build-essential openssl libssl-dev git python
 
+curl https://raw.github.com/creationix/nvm/v0.3.0/install.sh | sh #Install Node Version Manager
+source .nvm/nvm.sh #Source the file
+
+nvm install v0.10.26 #Install the latest version of NodeJS
+nvm alias default 0.10
+nvm use 0.10
+</pre>
+
+<p>Here is a <a href="https://gist.githubusercontent.com/MakerStan/9865462/raw/install-nodejs.sh">raw</a> version of the script above.</p>
 <p>Install docpad and plugins for eco, livereload, markdown, coffeescript</p>
-<p><script src='https://gist.github.com/9865462.js?file=install-docpad-and-plugins.sh'></script>
-The <a href="http://docpad.org/docs/begin">Beginner Guide</a> has a good explanation of why we need the plugins. Here is a short description of what they do:</p>
+<pre>
+npm install -g npm; npm install -g docpad@6.64
+docpad install eco #template engine
+docpad install livereload #automatic browser refresh
+docpad install marked #markdown support
+docpad install coffeescript #javascript preprocessor
+docpad install gist #embed code snippets from GitHub Gist
+
+docpad run #start the process that monitors file changes and refreshes the browser
+</pre>
+
+<p>Here is a <a href="https://gist.githubusercontent.com/MakerStan/9865462/raw/install-docpad-and-plugins.sh">raw</a> version of the script above.</p>
+<p>The <a href="http://docpad.org/docs/begin">Beginner Guide</a> has a good explanation of why we need the plugins. Here is a short description of what they do:</p>
 <ol>
 <li><a href="https://github.com/sstephenson/eco">Eco</a> lets us have templates so we can reuse code</li>
 <li><a href="https://github.com/docpad/docpad-plugin-livereload">livereload</a> enables automatic browser refreshes when files are changed</li>
