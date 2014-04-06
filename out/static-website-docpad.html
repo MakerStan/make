@@ -1,5 +1,39 @@
-<!DOCTYPE html><html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="You can use Docpad to create a static website. Static sites can be hosted on cloud storage services such Amazon S3. The steps listed below are for Linux, but this tool works on Windows and Mac as well."><meta name="author" content="MakerStan"><title>Create a static website using DocPad | Make</title><link rel="shortcut icon" href="ico/favicon.ico"><meta name="generator" content="DocPad v6.64.0"><link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"><link href="http://d27jzba8aj5ptt.cloudfront.net/jumbotron-narrow.min.css" rel="stylesheet"><!--[if lt IE 9]><script src="../../assets/js/html5shiv.js"></script>
-      <script src="../../assets/js/respond.min.js"></script><![endif]--><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-43034225-4','stanleygeorge.com');ga('send','pageview');</script></head><body><div class="container"><div class="header"><h2 class="text-muted"><a href="index.html">Home /</a>Create a static website using DocPad</h2></div><div class="jumbotron"><p class="lead" style="text-align:justify">You can use Docpad to create a static website. Static sites can be hosted on cloud storage services such Amazon S3. The steps listed below are for Linux, but this tool works on Windows and Mac as well.</p></div><p style="text-align:justify"></p><p>Create a static website or blog using <a href="http://docpad.org">Docpad</a>. The code snippets below show how to setup, view and edit the files. Since DocPad is based on <a href="http://nodejs.org/">Node.js</a>, we start by installing that.</p><pre>
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name=viewport content="width=device-width, initial-scale=1.0">
+<meta name=description content="You can use Docpad to create a static website. Static sites can be hosted on cloud storage services such Amazon S3. The steps listed below are for Linux, but this tool works on Windows and Mac as well.">
+<meta name=author content="MakerStan">
+<title>Create a static website using DocPad | Make</title>
+<link rel="shortcut icon" href="ico/favicon.ico" />
+<meta name="generator" content="DocPad v6.64.0" />
+<style >html.wait {
+	cursor: wait !important;
+	opacity: 0;
+	transition: opacity 0.5s ease;
+}</style>
+<link rel=stylesheet href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+<link href="http://d27jzba8aj5ptt.cloudfront.net/jumbotron-narrow.min.css" rel=stylesheet>
+<!--[if lt IE 9]>
+      <script src="../../assets/js/html5shiv.js"></script>
+      <script src="../../assets/js/respond.min.js"></script>
+    <![endif]-->
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-43034225-4','stanleygeorge.com');ga('send','pageview');</script>
+</head>
+<body>
+  <div class=container>
+    <div class=header>
+      <h2 class=text-muted>
+        <a href="index.html">Home / </a>Create a static website using DocPad
+      </h2>
+    </div>
+    <div class=jumbotron><p class=lead style="text-align:justify;">
+      You can use Docpad to create a static website. Static sites can be hosted on cloud storage services such Amazon S3. The steps listed below are for Linux, but this tool works on Windows and Mac as well.
+    </div>
+    <p style="text-align:justify;">
+      <p>Create a static website or blog using <a href="http://docpad.org">Docpad</a>. The code snippets below show how to setup, view and edit the files. Since DocPad is based on <a href="http://nodejs.org/">Node.js</a>, we start by installing that.</p>
+<pre>
 sudo apt-get update && sudo apt-get install curl build-essential openssl libssl-dev git python
 
 curl https://raw.github.com/creationix/nvm/v0.3.0/install.sh | sh #Install Node Version Manager
@@ -8,7 +42,11 @@ source .nvm/nvm.sh #Source the file
 nvm install v0.10.26 #Install the latest version of NodeJS
 nvm alias default 0.10
 nvm use 0.10
-</pre><p>Here is a <a href="https://gist.githubusercontent.com/MakerStan/9865462/raw/install-nodejs.sh">raw</a> version of the script above.</p><p>Install docpad and plugins for eco, livereload, markdown, coffeescript</p><pre>
+</pre>
+
+<p>Here is a <a href="https://gist.githubusercontent.com/MakerStan/9865462/raw/install-nodejs.sh">raw</a> version of the script above.</p>
+<p>Install docpad and plugins for eco, livereload, markdown, coffeescript</p>
+<pre>
 npm install -g npm; npm install -g docpad@6.64
 npm install grunt --save-dev
 docpad install eco #template engine
@@ -18,4 +56,79 @@ docpad install coffeescript #javascript preprocessor
 docpad install gist #embed code snippets from GitHub Gist
 
 docpad run #start the process that monitors file changes and refreshes the browser
-</pre><p>Here is a <a href="https://gist.githubusercontent.com/MakerStan/9865462/raw/install-docpad-and-plugins.sh">raw</a> version of the script above.</p><p>The <a href="http://docpad.org/docs/begin">Beginner Guide</a> has a good explanation of why we need the plugins. Here is a short description of what they do:</p><ol><li><a href="https://github.com/sstephenson/eco">Eco</a> lets us have templates so we can reuse code</li><li><a href="https://github.com/docpad/docpad-plugin-livereload">livereload</a> enables automatic browser refreshes when files are changed</li><li><a href="https://github.com/docpad/docpad-plugin-marked">marked</a> lets us use <a href="http://en.wikipedia.org/wiki/Markdown#Example">Markdown</a> instead of HTML tags</li><li><a href="http://coffeescript.org/">CoffeeScript</a> is a simple language that compiles into fast or faster than the equivalent handwritten JavaScript.</li><li><a href="https://gist.github.com">Gist</a> lets you host snippets of code on GitHub and embed them in your website or blog.</li></ol><p>The next step is to create a default layout for your website/blog. The layout this website uses is <a href="https://github.com/MakerStan/make/blob/master/src/layouts/default.html.eco">default.html.eco</a>. Place this file under your-website-folder/src/layouts/.</p><p>Once you define the layout, you can create individual pages/posts. The pages/posts can be written in markdown and are placed under yout-website-directory/src/documents/ . An example is the <a href="https://raw.githubusercontent.com/MakerStan/make/master/src/documents/index.html.md">index.html.md</a>. This file extension tells docpad that this is a markdown file that needs to be compiled into an html file. The html files are placed under your-website-directory/out/.</p><p>A couple of things to note are the variables such as &#39;title&#39;, &#39;author&#39;, &#39;preview&#39; etc.in index.html.md. I use these in default.html.eco as &lt;%= @document.title %&gt; etc. A big advantage here is that if I choose to change the layout of the file, I need to update only one file (default.html.eco) and all the pages reflect the change.</p><p>To deploy a static site generated by DocPad to Amazon S3, see <a href="edit-amazon-s3-files-linux.html">this post</a>. I prefer to save all the files online under version control. I use <a href="https://github.com">GitHub</a> for this. I also hooked <a href="https://travis-ci.org/">Travis-CI</a> to it so that any changes to the files are also deployed to Amazon S3. <a href="setup-travis-ci.html">This post</a> shows you how I did that.</p><p><strong>External Links</strong></p><ol><li>For additional setup details visit <a href="http://docpad.org/node/install">this link</a>.</li></ol><div class="footer">Created by <a href="https://github.com/MakerStan">MakerStan</a> on March 24, 2014. Last updated on March 30, 2014.<br><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/4.0/80x15.png"></a> This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</div></div></body></html>
+</pre>
+
+<p>Here is a <a href="https://gist.githubusercontent.com/MakerStan/9865462/raw/install-docpad-and-plugins.sh">raw</a> version of the script above.</p>
+<p>The <a href="http://docpad.org/docs/begin">Beginner Guide</a> has a good explanation of why we need the plugins. Here is a short description of what they do:</p>
+<ol>
+<li><a href="https://github.com/sstephenson/eco">Eco</a> lets us have templates so we can reuse code</li>
+<li><a href="https://github.com/docpad/docpad-plugin-livereload">livereload</a> enables automatic browser refreshes when files are changed</li>
+<li><a href="https://github.com/docpad/docpad-plugin-marked">marked</a> lets us use <a href="http://en.wikipedia.org/wiki/Markdown#Example">Markdown</a> instead of HTML tags</li>
+<li><a href="http://coffeescript.org/">CoffeeScript</a> is a simple language that compiles into fast or faster than the equivalent handwritten JavaScript.</li>
+<li><a href="https://gist.github.com">Gist</a> lets you host snippets of code on GitHub and embed them in your website or blog.</li>
+</ol>
+<p>The next step is to create a default layout for your website/blog. The layout this website uses is <a href="https://github.com/MakerStan/make/blob/master/src/layouts/default.html.eco">default.html.eco</a>. Place this file under your-website-folder/src/layouts/.</p>
+<p>Once you define the layout, you can create individual pages/posts. The pages/posts can be written in markdown and are placed under yout-website-directory/src/documents/ . An example is the <a href="https://raw.githubusercontent.com/MakerStan/make/master/src/documents/index.html.md">index.html.md</a>. This file extension tells docpad that this is a markdown file that needs to be compiled into an html file. The html files are placed under your-website-directory/out/.</p>
+<p>A couple of things to note are the variables such as &#39;title&#39;, &#39;author&#39;, &#39;preview&#39; etc.in index.html.md. I use these in default.html.eco as &lt;%= @document.title %&gt;  etc. A big advantage here is that if I choose to change the layout of the file, I need to update only one file (default.html.eco) and all the pages reflect the change.</p>
+<p>If your view the source of the HTML files that are generated under the your-website-directory/out folder, you will see the JavaScript for LiveReload. This is fine for development when you want the browser automatically refresh to see the changes. To skip this in produtction when you deploy, you can run the <code>docpad generate --env static<code/> command.  </p>
+<p>To deploy a static site generated by DocPad to Amazon S3, see <a href="edit-amazon-s3-files-linux.html">this post</a>. I prefer to save all the files online under version control. I use <a href="https://github.com">GitHub</a> for this. I also hooked <a href="https://travis-ci.org/">Travis-CI</a> to it so that any changes to the files are also deployed to Amazon S3. <a href="setup-travis-ci.html">This post</a> shows you how I did that.</p>
+<pre><code>Another thing you can do before deploying is to minify the HTML by removing comments and whitespace. You can do this using [html-minifier](https://github.com/kangax/html-minifier). You can automate this task using a task runner such as [Grunt](http://gruntjs.com/). See [this post](grunt-install-and-setup.html) to install and configure Grunt.
+</code></pre><p><strong>External Links</strong></p>
+<ol>
+<li>For additional setup details visit <a href="http://docpad.org/node/install">this link</a>.</li>
+</ol>
+
+      <script >(function(){
+	/* Did we just livereload? */
+var log = !!(localStorage && console && console.log && true);
+if ( log && localStorage.getItem('/docpad-livereload/reloaded') === 'yes' ) {
+	localStorage.removeItem('/docpad-livereload/reloaded');
+	console.log('LiveReload completed at', new Date())
+}
+
+/* Listen for the regenerated event and perform a reload of the page when the event occurs */
+var listen = function(){
+	var primus = new Primus('/docpad-livereload');
+	primus.on('data', function(data){
+		if ( data && data.message ) {
+			if ( data.message === 'generateBefore' ) {
+				if ( log ) {
+					console.log('LiveReload started at', new Date());
+				}
+				if ( typeof document.getElementsByTagName !== 'undefined' ) {
+	document.getElementsByTagName('html')[0].className += ' wait';
+}
+			}
+			else if ( data.message === 'generateAfter' ) {
+				if ( log ) {
+					localStorage.setItem('/docpad-livereload/reloaded', 'yes');
+				}
+				document.location.reload();
+			}
+		}
+	});
+};
+	/* Inject socket into our page */
+var inject = function(){
+	var t = document.createElement('script');
+	t.type = 'text/javascript';
+	t.async = 'async';
+	t.src = '/primus/primus.js';
+	t.onload = listen;
+	var s = document.getElementsByTagName('script')[0];
+	s.parentNode.insertBefore(t, s);
+};
+	if ( typeof Primus !== 'undefined' ) {
+		listen();
+	} else {
+		inject();
+	}
+})();</script>
+    </p>
+    <div class=footer>
+      Created by <a href="https://github.com/MakerStan">MakerStan</a> on March 24, 2014. Last updated on March 30, 2014.<br />
+      <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/4.0/80x15.png" /></a> This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+    </div>
+  </div>
+</body>
+</html>

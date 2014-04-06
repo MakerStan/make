@@ -1,2 +1,105 @@
-<!DOCTYPE html><html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="The chip used on an Arduino Uno is ATMega328p. This is the AVR family of micro-controllers made by Atmel. You purchase the chip by itself for the fraction of the cost of an Arduino and directly program on it."><meta name="author" content="MakerStan"><title>Programming with AVR | Make</title><link rel="shortcut icon" href="ico/favicon.ico"><meta name="generator" content="DocPad v6.64.0"><link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"><link href="http://d27jzba8aj5ptt.cloudfront.net/jumbotron-narrow.min.css" rel="stylesheet"><!--[if lt IE 9]><script src="../../assets/js/html5shiv.js"></script>
-      <script src="../../assets/js/respond.min.js"></script><![endif]--><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-43034225-4','stanleygeorge.com');ga('send','pageview');</script></head><body><div class="container"><div class="header"><h2 class="text-muted"><a href="index.html">Home /</a>Programming with AVR</h2></div><div class="jumbotron"><p class="lead" style="text-align:justify">The chip used on an Arduino Uno is ATMega328p. This is the AVR family of micro-controllers made by Atmel. You purchase the chip by itself for the fraction of the cost of an Arduino and directly program on it.</p></div><p style="text-align:justify"></p><p>If you are interested in <a href="http://arduino.cc/">Arduino</a> programming, its likely that you will do more than one project. If you would like to leave a project as-is and work on another one, you could either buy a new Arduino or just buy the chip (ATMega328p) that is on the <a href="http://arduino.cc/en/Main/ArduinoBoardUno">Arduino Uno R3</a>. You can buy the chips from:</p><p>$5.95 from Adadruit at <a href="http://www.adafruit.com/products/123">Arduino bootloader-programmed chip (Atmega328P)</a><br>$5.90 from Amazon at <a href="http://www.amazon.com/dp/B007SH0D0A">ATMEGA328P-PU with Arduino Bootloader - Uno</a></p><p>If you buy the chip, you will need an AVR Programmer. This is something that will write your code to the chip. This process is called flashing. This <a href="http://arduino.cc/en/Tutorial/ArduinoToBreadboard">tutorial</a> describes how you can also use your Arduino to flash a chip. If your do not have an Arduino, here are a few programmers that you can consider.</p><p>$14.95 from Sparkfun at <a href="https://www.sparkfun.com/products/9825">Pocket AVR Programmer</a>. Designed in collaboration with <a href="https://github.com/ladyada">Ladyada</a>.<br>$11.95 from Amazon at <a href="http://www.amazon.com/dp/B0051SRZWC/">SainSmart USB ISP Programmer for ATMEL AVR ATMega ATTiny 51 Board</a><br>$22.00 from Adafruit at <a href="http://www.adafruit.com/products/46">USBtinyISP AVR Programmer Kit (USB SpokePOV Dongle) - v2.0</a><br>$19.95 from Pololu at <a href="http://www.pololu.com/product/1300/">Pololu USB AVR Programmer</a><br>$34.00 from Atmel at <a href="http://store.atmel.com/PartDetail.aspx?q=p:10500054#tc:description">Atmel AVRISP mkII In-System Programmer (ATAVRISP2)</a><br>$37.50 from Digi-Key at <a href="http://www.digikey.com/product-detail/en/ATAVRISP2/ATAVRISP2-ND/898891">ATAVRISP</a><br></p><p>Typically you would write the code in C. See <a href="https://github.com/hexagon5un/AVR-Programming/blob/master/Chapter02_Programming-AVRs/blinkLED/blinkLED.c">blinkLED.c</a> from the book <a href="http://littlehacks.org/AVR-Programming">AVR-Programming</a> by Elliot Williams.</p><p><strong>References</strong></p><ol><li>AVR-Programming by Elliot Williams is a good book. You can find more about it on <a href="http://littlehacks.org/AVR-Programming">his website</a>.</li><li>Code examples from the AVR-Programming book by Elliot Williams can be found on GitHub <a href="https://github.com/hexagon5un/AVR-Programming">here</a></li></ol><div class="footer">Created by <a href="https://github.com/MakerStan">MakerStan</a> on Match 31, 2014. Last updated on March 31, 2014.<br><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/4.0/80x15.png"></a> This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</div></div></body></html>
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name=viewport content="width=device-width, initial-scale=1.0">
+<meta name=description content="The chip used on an Arduino Uno is ATMega328p. This is the AVR family of micro-controllers made by Atmel. You purchase the chip by itself for the fraction of the cost of an Arduino and directly program on it.">
+<meta name=author content="MakerStan">
+<title>Programming with AVR | Make</title>
+<link rel="shortcut icon" href="ico/favicon.ico" />
+<meta name="generator" content="DocPad v6.64.0" />
+<style >html.wait {
+	cursor: wait !important;
+	opacity: 0;
+	transition: opacity 0.5s ease;
+}</style>
+<link rel=stylesheet href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+<link href="http://d27jzba8aj5ptt.cloudfront.net/jumbotron-narrow.min.css" rel=stylesheet>
+<!--[if lt IE 9]>
+      <script src="../../assets/js/html5shiv.js"></script>
+      <script src="../../assets/js/respond.min.js"></script>
+    <![endif]-->
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-43034225-4','stanleygeorge.com');ga('send','pageview');</script>
+</head>
+<body>
+  <div class=container>
+    <div class=header>
+      <h2 class=text-muted>
+        <a href="index.html">Home / </a>Programming with AVR
+      </h2>
+    </div>
+    <div class=jumbotron><p class=lead style="text-align:justify;">
+      The chip used on an Arduino Uno is ATMega328p. This is the AVR family of micro-controllers made by Atmel. You purchase the chip by itself for the fraction of the cost of an Arduino and directly program on it.
+    </div>
+    <p style="text-align:justify;">
+      <p>If you are interested in <a href="http://arduino.cc/">Arduino</a> programming, its likely that you will do more than one project. If you would like to leave a project as-is and work on another one, you could either buy a new Arduino or just buy the chip (ATMega328p) that is on the <a href="http://arduino.cc/en/Main/ArduinoBoardUno">Arduino Uno R3</a>. You can buy the chips from:</p>
+<p>$5.95 from Adadruit at <a href="http://www.adafruit.com/products/123">Arduino bootloader-programmed chip (Atmega328P)</a> <br />
+$5.90 from Amazon at <a href="http://www.amazon.com/dp/B007SH0D0A">ATMEGA328P-PU with Arduino Bootloader - Uno</a></p>
+<p>If you buy the chip, you will need an AVR Programmer. This is something that will write your code to the chip. This process is called flashing. This <a href="http://arduino.cc/en/Tutorial/ArduinoToBreadboard">tutorial</a> describes how you can also use your Arduino to flash a chip. If your do not have an Arduino, here are a few programmers that you can consider.</p>
+<p>$14.95 from Sparkfun at <a href="https://www.sparkfun.com/products/9825">Pocket AVR Programmer</a>. Designed in collaboration with <a href="https://github.com/ladyada">Ladyada</a>.<br />
+$11.95 from Amazon at <a href="http://www.amazon.com/dp/B0051SRZWC/">SainSmart USB ISP Programmer for ATMEL AVR ATMega ATTiny 51 Board</a> <br />
+$22.00 from Adafruit at <a href="http://www.adafruit.com/products/46">USBtinyISP AVR Programmer Kit (USB SpokePOV Dongle) - v2.0</a> <br />
+$19.95 from Pololu at <a href="http://www.pololu.com/product/1300/">Pololu USB AVR Programmer</a> <br />
+$34.00 from Atmel at <a href="http://store.atmel.com/PartDetail.aspx?q=p:10500054#tc:description">Atmel AVRISP mkII In-System Programmer (ATAVRISP2)</a> <br />
+$37.50 from Digi-Key at <a href="http://www.digikey.com/product-detail/en/ATAVRISP2/ATAVRISP2-ND/898891">ATAVRISP</a> <br /></p>
+<p>Typically you would write the code in C. See <a href="https://github.com/hexagon5un/AVR-Programming/blob/master/Chapter02_Programming-AVRs/blinkLED/blinkLED.c">blinkLED.c</a> from the book <a href="http://littlehacks.org/AVR-Programming">AVR-Programming</a> by Elliot Williams.</p>
+<p><strong>References</strong></p>
+<ol>
+<li>AVR-Programming by Elliot Williams is a good book. You can find more about it on <a href="http://littlehacks.org/AVR-Programming">his website</a>.</li>
+<li>Code examples from the AVR-Programming book by Elliot Williams can be found on GitHub <a href="https://github.com/hexagon5un/AVR-Programming">here</a></li>
+</ol>
+
+      <script >(function(){
+	/* Did we just livereload? */
+var log = !!(localStorage && console && console.log && true);
+if ( log && localStorage.getItem('/docpad-livereload/reloaded') === 'yes' ) {
+	localStorage.removeItem('/docpad-livereload/reloaded');
+	console.log('LiveReload completed at', new Date())
+}
+
+/* Listen for the regenerated event and perform a reload of the page when the event occurs */
+var listen = function(){
+	var primus = new Primus('/docpad-livereload');
+	primus.on('data', function(data){
+		if ( data && data.message ) {
+			if ( data.message === 'generateBefore' ) {
+				if ( log ) {
+					console.log('LiveReload started at', new Date());
+				}
+				if ( typeof document.getElementsByTagName !== 'undefined' ) {
+	document.getElementsByTagName('html')[0].className += ' wait';
+}
+			}
+			else if ( data.message === 'generateAfter' ) {
+				if ( log ) {
+					localStorage.setItem('/docpad-livereload/reloaded', 'yes');
+				}
+				document.location.reload();
+			}
+		}
+	});
+};
+	/* Inject socket into our page */
+var inject = function(){
+	var t = document.createElement('script');
+	t.type = 'text/javascript';
+	t.async = 'async';
+	t.src = '/primus/primus.js';
+	t.onload = listen;
+	var s = document.getElementsByTagName('script')[0];
+	s.parentNode.insertBefore(t, s);
+};
+	if ( typeof Primus !== 'undefined' ) {
+		listen();
+	} else {
+		inject();
+	}
+})();</script>
+    </p>
+    <div class=footer>
+      Created by <a href="https://github.com/MakerStan">MakerStan</a> on Match 31, 2014. Last updated on March 31, 2014.<br />
+      <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/4.0/80x15.png" /></a> This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name=viewport content="width=device-width, initial-scale=1.0">
+<meta name=description content="Grun can automate reperitive tasks for you. It is a JavaScript Task Runner. This post discusses how to install Grunt a automate a few tasks.">
+<meta name=author content="MakerStan">
+<title>Grunt: Install and Setup | Make</title>
+<link rel="shortcut icon" href="ico/favicon.ico" />
+<meta name="generator" content="DocPad v6.64.0" />
+<style >html.wait {
+	cursor: wait !important;
+	opacity: 0;
+	transition: opacity 0.5s ease;
+}</style>
+<link rel=stylesheet href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+<link href="http://d27jzba8aj5ptt.cloudfront.net/jumbotron-narrow.min.css" rel=stylesheet>
+<!--[if lt IE 9]>
+      <script src="../../assets/js/html5shiv.js"></script>
+      <script src="../../assets/js/respond.min.js"></script>
+    <![endif]-->
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-43034225-4','stanleygeorge.com');ga('send','pageview');</script>
+</head>
+<body>
+  <div class=container>
+    <div class=header>
+      <h2 class=text-muted>
+        <a href="index.html">Home / </a>Grunt: Install and Setup
+      </h2>
+    </div>
+    <div class=jumbotron><p class=lead style="text-align:justify;">
+      Grun can automate reperitive tasks for you. It is a JavaScript Task Runner. This post discusses how to install Grunt a automate a few tasks.
+    </div>
+    <p style="text-align:justify;">
+      <p>Lets start by installing Grunt and a few plugins:</p>
+<pre>
+npm install grunt safeps --save
+npm install grunt-cli -g 
+npm install grunt-contrib-uglify --save-dev
+npm install grunt-contrib-htmlmin --save-dev
+npm install --save-dev grunt-shell
+</pre>
+
+<p>After the install we need configure the automation in a  Gruntfile. I wrote a CoffeeScript version of the configuration. It does executes the command <code>docpad generate --env static</code>. The other thing it does is minify the HTML that is generated. Here is my <code>Gruntfile.coffee</code>:</p>
+<pre>
+module.exports = (grunt) -&gt;
+  grunt.initConfig
+    #http://blog.hypercubed.com/archives/2013/10/05/docpad-and-grunt/
+    shell:
+      docpad:
+        options:
+          stdout: true
+        command: "docpad generate --env static" #command to process files
+
+    htmlmin: # Task to minimize the HTML files
+      dist: # Target
+        expand: true
+        cwd: '/home/stan/make' #This is the current working directory
+        src: ['out/*.html'] #Process html files from the source folder called 'out'
+        dest: '' #*Put the processed files back in the same source folder*
+        options: # Target options
+          removeComments: true
+          collapseWhitespace: true
+          minifyJS:true
+
+  grunt.loadNpmTasks('grunt-shell');
+  grunt.loadNpmTasks('grunt-contrib-htmlmin');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
+
+  grunt.registerTask('generate', ['shell:docpad']);
+  grunt.registerTask "default", ['generate', 'htmlmin']
+</pre>
+      <script >(function(){
+	/* Did we just livereload? */
+var log = !!(localStorage && console && console.log && true);
+if ( log && localStorage.getItem('/docpad-livereload/reloaded') === 'yes' ) {
+	localStorage.removeItem('/docpad-livereload/reloaded');
+	console.log('LiveReload completed at', new Date())
+}
+
+/* Listen for the regenerated event and perform a reload of the page when the event occurs */
+var listen = function(){
+	var primus = new Primus('/docpad-livereload');
+	primus.on('data', function(data){
+		if ( data && data.message ) {
+			if ( data.message === 'generateBefore' ) {
+				if ( log ) {
+					console.log('LiveReload started at', new Date());
+				}
+				if ( typeof document.getElementsByTagName !== 'undefined' ) {
+	document.getElementsByTagName('html')[0].className += ' wait';
+}
+			}
+			else if ( data.message === 'generateAfter' ) {
+				if ( log ) {
+					localStorage.setItem('/docpad-livereload/reloaded', 'yes');
+				}
+				document.location.reload();
+			}
+		}
+	});
+};
+	/* Inject socket into our page */
+var inject = function(){
+	var t = document.createElement('script');
+	t.type = 'text/javascript';
+	t.async = 'async';
+	t.src = '/primus/primus.js';
+	t.onload = listen;
+	var s = document.getElementsByTagName('script')[0];
+	s.parentNode.insertBefore(t, s);
+};
+	if ( typeof Primus !== 'undefined' ) {
+		listen();
+	} else {
+		inject();
+	}
+})();</script>
+    </p>
+    <div class=footer>
+      Created by <a href="https://github.com/MakerStan">MakerStan</a> on April 5, 2014. Last updated on April 5, 2014.<br />
+      <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/4.0/80x15.png" /></a> This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+    </div>
+  </div>
+</body>
+</html>
