@@ -14,7 +14,7 @@ $5.90 from Amazon at [ATMEGA328P-PU with Arduino Bootloader - Uno](http://www.am
 
 If you buy the chip, you will need an AVR Programmer. This is something that will write your code to the chip. This process is called flashing. This [tutorial](http://arduino.cc/en/Tutorial/ArduinoToBreadboard) describes how you can also use your Arduino to flash a chip. If your do not have an Arduino, here are a few programmers that you can consider.
 
-$14.95 from Sparkfun at [Pocket AVR Programmer](https://www.sparkfun.com/products/9825). Designed in collaboration with [Ladyada](http://en.wikipedia.org/wiki/Limor_Fried).<br />
+$14.95 from Sparkfun at [Pocket AVR Programmer](https://www.sparkfun.com/products/9825). Designed in collaboration with [Ladyada](https://github.com/ladyada).<br />
 $11.95 from Amazon at [SainSmart USB ISP Programmer for ATMEL AVR ATMega ATTiny 51 Board](http://www.amazon.com/dp/B0051SRZWC/) <br />
 $22.00 from Adafruit at [USBtinyISP AVR Programmer Kit (USB SpokePOV Dongle) - v2.0](http://www.adafruit.com/products/46) <br />
 $19.95 from Pololu at [Pololu USB AVR Programmer](http://www.pololu.com/product/1300/) <br />

@@ -9,12 +9,20 @@
   "dependencies": {
     "docpad": "~6.64.0",
     "docpad-plugin-eco": "~2.0.3",
-    "docpad-plugin-gist": "~2.1.1",
     "docpad-plugin-livereload": "~2.6.0",
-    "docpad-plugin-marked": "~2.2.0"
+    "docpad-plugin-marked": "~2.2.0",
+    "docpad-plugin-uglify": "~2.4.0",
+    "grunt": "^0.4.4",
+    "safeps": "^2.2.11"
   },
   "main": "node_modules/docpad/bin/docpad-server",
   "scripts": {
     "start": "node_modules/docpad/bin/docpad-server"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.4",
+    "grunt-contrib-htmlmin": "^0.2.0",
+    "grunt-contrib-uglify": "^0.4.0",
+    "grunt-shell": "^0.6.4"
   }
 }

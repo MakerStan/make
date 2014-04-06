@@ -25,6 +25,7 @@ Here is a [raw](https://gist.githubusercontent.com/MakerStan/9865462/raw/install
 Install docpad and plugins for eco, livereload, markdown, coffeescript
 <pre>
 npm install -g npm; npm install -g docpad@6.64
+npm install grunt --save-dev
 docpad install eco #template engine
 docpad install livereload #automatic browser refresh
 docpad install marked #markdown support
