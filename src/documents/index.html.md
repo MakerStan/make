@@ -21,6 +21,8 @@ Cloud
 <br />
 [Do Continuous Integration using Travis-CI](setup-travis-ci.html)
 <br />
+[BigData processing using Google BigQuery and CMS Medicare Data from 2012](google-bigquery-medicare.html)
+<br />
 <br />
 Robot Operating System
 <br />
@@ -32,4 +34,10 @@ Robot Operating System
 Electronics
 <br />
 [Programming with AVR (The chip on the Arduino)](programming-with-avr.html)
+<br />
+<br />
+
+Linux
+<br />
+[Use wget to check for dead links on your website](wget-check-dead-links.html)
 <br />
