@@ -1,0 +1,93 @@
++---------------------------------------------+---------+
+|                provider_type                |  count  |
++---------------------------------------------+---------+
+| Diagnostic Radiology                        | 1226827 |
+| Internal Medicine                           | 1197204 |
+| Family Practice                             |  970544 |
+| Cardiology                                  |  535268 |
+| Orthopedic Surgery                          |  316510 |
+| Nurse Practitioner                          |  270502 |
+| Ophthalmology                               |  234633 |
+| Anesthesiology                              |  218190 |
+| Physician Assistant                         |  218076 |
+| Emergency Medicine                          |  216668 |
+| Urology                                     |  194499 |
+| Podiatry                                    |  194221 |
+| Dermatology                                 |  186553 |
+| Physical Therapist                          |  186256 |
+| Hematology/Oncology                         |  181980 |
+| Gastroenterology                            |  172698 |
+| General Surgery                             |  169592 |
+| Pulmonary Disease                           |  141533 |
+| Pathology                                   |  141097 |
+| Optometry                                   |  139275 |
+| Neurology                                   |  136639 |
+| Clinical Laboratory                         |  126633 |
+| Obstetrics/Gynecology                       |  117126 |
+| Mass Immunization Roster Biller             |  109872 |
+| Nephrology                                  |  107746 |
+| Otolaryngology                              |   97660 |
+| CRNA                                        |   96701 |
+| Physical Medicine and Rehabilitation        |   82425 |
+| Psychiatry                                  |   81298 |
+| Radiation Oncology                          |   75253 |
+| Rheumatology                                |   69324 |
+| Vascular Surgery                            |   59964 |
+| General Practice                            |   59645 |
+| Ambulatory Surgical Center                  |   58262 |
+| Medical Oncology                            |   55003 |
+| Endocrinology                               |   52120 |
+| Chiropractic                                |   50971 |
+| Neurosurgery                                |   40852 |
+| Interventional Pain Management              |   39005 |
+| Independent Diagnostic Testing Facility     |   38438 |
+| Infectious Disease                          |   36695 |
+| Interventional Radiology                    |   33552 |
+| Cardiac Electrophysiology                   |   33344 |
+| Clinical Psychologist                       |   29233 |
+| Allergy/Immunology                          |   26661 |
+| Ambulance Service Supplier                  |   25259 |
+| Plastic and Reconstructive Surgery          |   23532 |
+| Licensed Clinical Social Worker             |   21783 |
+| Geriatric Medicine                          |   20670 |
+| Critical Care (Intensivists)                |   19194 |
+| Pain Management                             |   19028 |
+| Audiologist (billing independently)         |   18531 |
+| Thoracic Surgery                            |   17886 |
+| Hand Surgery                                |   16812 |
+| Cardiac Surgery                             |   16715 |
+| Occupational therapist                      |   15620 |
+| Colorectal Surgery (formerly proctology)    |   12757 |
+| Hematology                                  |    9629 |
+| Portable X-ray                              |    9466 |
+| Pediatric Medicine                          |    8607 |
+| Nuclear Medicine                            |    8166 |
+| Gynecological/Oncology                      |    8013 |
+| Certified Clinical Nurse Specialist         |    6138 |
+| Surgical Oncology                           |    4647 |
+| Osteopathic Manipulative Medicine           |    4616 |
+| Sports Medicine                             |    3110 |
+| Oral Surgery (dentists only)                |    2670 |
+| Registered Dietician/Nutrition Professional |    2616 |
+| Anesthesiologist Assistants                 |    2563 |
+| Maxillofacial Surgery                       |    1842 |
+| Hospice and Palliative Care                 |    1821 |
+| Public Health Welfare Agency                |    1747 |
+| Preventive Medicine                         |    1680 |
+| Peripheral Vascular Disease                 |    1613 |
+| Multispecialty Clinic/Group Practice        |    1545 |
+| All Other Suppliers                         |    1508 |
+| Speech Language Pathologist                 |     946 |
+| Certified Nurse Midwife                     |     892 |
+| Radiation Therapy                           |     816 |
+| Unknown Physician Specialty Code            |     788 |
+| Geriatric Psychiatry                        |     760 |
+| Neuropsychiatry                             |     658 |
+| Psychologist (billing independently)        |     549 |
+| Addiction Medicine                          |     545 |
+| Unknown Supplier/Provider                   |     346 |
+| Mammographic Screening Center               |      76 |
+| Slide Preparation Facility                  |      52 |
+| Pharmacy                                    |      50 |
+| Sleep Medicine                              |      16 |
++---------------------------------------------+---------+

@@ -23,6 +23,8 @@ Cloud
 <br />
 [BigData processing using Google BigQuery and CMS Medicare Data from 2012](google-bigquery-medicare.html)
 <br />
+[Stats on CMS 2012 Medicare Data using Google BigQuery](medicare-2012-stats.html)
+<br />
 <br />
 Robot Operating System
 <br />

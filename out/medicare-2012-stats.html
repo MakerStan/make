@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name=viewport content="width=device-width, initial-scale=1.0">
+<meta name=description content="Here is an analysis of about 9 millions records of Medicare data from 2012 that was made public by  Centers for Medicare &amp; Medicaid Services (CMS).">
+<meta name=author content="MakerStan">
+<title>Analysis of Medicare 2012 Data | Make</title>
+<link rel="shortcut icon" href="ico/favicon.ico" />
+<meta name="generator" content="DocPad v6.64.0" />
+<style >html.wait {
+	cursor: wait !important;
+	opacity: 0;
+	transition: opacity 0.5s ease;
+}</style>
+<link rel=stylesheet href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+<link href="http://d27jzba8aj5ptt.cloudfront.net/jumbotron-narrow.min.css" rel=stylesheet>
+<!--[if lt IE 9]>
+      <script src="../../assets/js/html5shiv.js"></script>
+      <script src="../../assets/js/respond.min.js"></script>
+    <![endif]-->
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-43034225-4','stanleygeorge.com');ga('send','pageview');</script>
+</head>
+<body>
+  <div class=container>
+    <div class=header>
+      <h2 class=text-muted>
+        <a href="index.html">Home / </a>Analysis of Medicare 2012 Data
+      </h2>
+    </div>
+    <div class=jumbotron><p class=lead style="text-align:justify;">
+      Here is an analysis of about 9 millions records of Medicare data from 2012 that was made public by  Centers for Medicare &amp; Medicaid Services (CMS).
+    </div>
+    <p style="text-align:justify;">
+      <p>If you are interested in how I set up the data, please see <a href="google-bigquery-medicare.html">this post</a>.</p>
+<p><strong>Total number of records:</strong> 9,142,826</p>
+<pre>
+bq query "SELECT COUNT(npi) as count FROM medicare.medicare_2012"
+</pre>
+
+<p><strong>Number of Provider Types:</strong> 89 </p>
+<pre>
+bq query "SELECT SUM(COUNT(provider_type)) as sum FROM medicare.medicare_2012 GROUP BY provider_type"
+</pre>
+
+<p><strong>Number of Providers:</strong><br /> 
+Total=893,802<br /> 
+Individual=847,181 (nppes_entity_code=&#39;I&#39;)<br />
+Others=51,541 (nppes_entity_code=&#39;O&#39;)<br />
+Miscellaneous=4 (nppes_entity_code=&#39;.&#39;)<br /></p>
+<pre>
+bq query "SELECT SUM(COUNT(DISTINCT  npi)) as sum FROM medicare.medicare_2012"
+</pre>
+
+<p>Number of entries for each Provider Type <a href="medicare-provider-types-sorted-numbered.txt">is here</a>.</p>
+<pre>
+bq query "SELECT ROW_NUMBER() OVER() row_number, provider_type, count FROM (SELECT provider_type, COUNT(provider_type) as count FROM medicare.medicare_2012 GROUP BY provider_type order by count desc)"
+</pre>
+The top 10 Provider Types having the most number of entries are:
+<pre>
++------------+---------------------------------------------+---------+
+| row_number |                provider_type                |  count  |
++------------+---------------------------------------------+---------+
+|          1 | Diagnostic Radiology                        | 1226827 |
+|          2 | Internal Medicine                           | 1197204 |
+|          3 | Family Practice                             |  970544 |
+|          4 | Cardiology                                  |  535268 |
+|          5 | Orthopedic Surgery                          |  316510 |
+|          6 | Nurse Practitioner                          |  270502 |
+|          7 | Ophthalmology                               |  234633 |
+|          8 | Anesthesiology                              |  218190 |
+|          9 | Physician Assistant                         |  218076 |
+|         10 | Emergency Medicine                          |  216668 |
+</pre>
+The bottom 10 Provider Types having the least number of entries are:
+<pre>
+|         80 | Unknown Physician Specialty Code            |     788 |
+|         81 | Geriatric Psychiatry                        |     760 |
+|         82 | Neuropsychiatry                             |     658 |
+|         83 | Psychologist (billing independently)        |     549 |
+|         84 | Addiction Medicine                          |     545 |
+|         85 | Unknown Supplier/Provider                   |     346 |
+|         86 | Mammographic Screening Center               |      76 |
+|         87 | Slide Preparation Facility                  |      52 |
+|         88 | Pharmacy                                    |      50 |
+|         89 | Sleep Medicine                              |      16 |
++------------+---------------------------------------------+---------+
+</pre>
+      <script >(function(){
+	/* Did we just livereload? */
+var log = !!(localStorage && console && console.log && true);
+if ( log && localStorage.getItem('/docpad-livereload/reloaded') === 'yes' ) {
+	localStorage.removeItem('/docpad-livereload/reloaded');
+	console.log('LiveReload completed at', new Date())
+}
+
+/* Listen for the regenerated event and perform a reload of the page when the event occurs */
+var listen = function(){
+	var primus = new Primus('/docpad-livereload');
+	primus.on('data', function(data){
+		if ( data && data.message ) {
+			if ( data.message === 'generateBefore' ) {
+				if ( log ) {
+					console.log('LiveReload started at', new Date());
+				}
+				if ( typeof document.getElementsByTagName !== 'undefined' ) {
+	document.getElementsByTagName('html')[0].className += ' wait';
+}
+			}
+			else if ( data.message === 'generateAfter' ) {
+				if ( log ) {
+					localStorage.setItem('/docpad-livereload/reloaded', 'yes');
+				}
+				document.location.reload();
+			}
+		}
+	});
+};
+	/* Inject socket into our page */
+var inject = function(){
+	var t = document.createElement('script');
+	t.type = 'text/javascript';
+	t.async = 'async';
+	t.src = '/primus/primus.js';
+	t.onload = listen;
+	var s = document.getElementsByTagName('script')[0];
+	s.parentNode.insertBefore(t, s);
+};
+	if ( typeof Primus !== 'undefined' ) {
+		listen();
+	} else {
+		inject();
+	}
+})();</script>
+    </p>
+    <div class=footer>
+      Created by <a href="https://github.com/MakerStan">MakerStan</a> on April 13, 2013. Last updated on April 13, 2013.<br />
+      <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/4.0/80x15.png" /></a> This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+    </div>
+  </div>
+</body>
+</html>

@@ -2,7 +2,7 @@
 title: "BigData processing using Google BigQuery and US Medicare data from 2012"
 author: "MakerStan"
 created: "April 12, 2014"
-edited: "April 12, 2014"
+edited: "April 13, 2014"
 layout: "default"
 isPage: true
 preview: "Setup and process BigData using Google BigQuery. This post discusses uploading the data to Google CloudStorage and then loading them into BigQuery. After that we discuss how to run queries against them."
@@ -88,6 +88,17 @@ This is the output that you will see:<pre>
 | Mass Immunization Roster Biller |    17 |
 +---------------------------------+-------+
 </pre>
+
+**Processing Times**<br />
+When I used the all the data this is the time it took me: <pre>
+time tail -n+3 medicare/medicare.txt > medicare/medicare-all.txt *#real 0m25.047s#
+time gzip medicare/medicare-all.txt *#real 2m2.664s*
+time gsutil cp medicare/medicare-all.txt.gz gs://medicare/ *#real 5m9.475s*
+time bq rm -t medicare.medicare_2012 *#real 0m8.990s - Delete the existing table with 999 rows*
+time bq load --field_delimiter='\t' --max_bad_records=99999999 medicare.medicare_2012 gs://medicare/medicare-1000.all.gz medicare/schema.txt *#real 7m21.388s*
+</pre>
+
+If you are interested in analysis of the entire Medicare 2012 data, please see [this post](medicare-2012-stats.html).
 
 **References**
 1. [Case study](https://developers.google.com/bigquery/case-studies/safari-books): How Safari Books Online uses BigQuery for Business Intelligence
