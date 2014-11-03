@@ -1,6 +1,6 @@
 ---
 title: ""
-author: "MakerStan"
+author: "StanGeorge"
 created: ""
 edited: ""
 layout: "default"
