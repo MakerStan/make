@@ -1,6 +1,6 @@
 ---
 title: "Edit Amazon S3 Files"
-author: "MakerStan"
+author: "StanGeorge"
 created: "March 24, 2014"
 edited: "March 27, 2014"
 layout: "default"

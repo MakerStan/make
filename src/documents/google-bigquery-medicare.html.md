@@ -1,6 +1,6 @@
 ---
 title: "BigData processing using Google BigQuery and US Medicare data from 2012"
-author: "MakerStan"
+author: "StanGeorge"
 created: "April 12, 2014"
 edited: "April 13, 2014"
 layout: "default"

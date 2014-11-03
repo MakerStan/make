@@ -1,6 +1,6 @@
 ---
 title: "Blender"
-author: "MakerStan"
+author: "StanGeorge"
 created: "April 8, 2014"
 edited: "April 8, 2014"
 layout: "default"

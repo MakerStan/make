@@ -1,6 +1,6 @@
 ---
 title: "Create a static website using DocPad"
-author: "MakerStan"
+author: "StanGeorge"
 created: "March 24, 2014"
 edited: "March 30, 2014"
 layout: "default"
@@ -20,7 +20,7 @@ nvm alias default 0.10
 nvm use 0.10
 </pre>
 
-Here is a [raw](https://gist.githubusercontent.com/MakerStan/9865462/raw/install-nodejs.sh) version of the script above.
+Here is a [raw](https://gist.githubusercontent.com/StanGeorge/9865462/raw/install-nodejs.sh) version of the script above.
 
 Install docpad and plugins for eco, livereload, markdown, coffeescript
 <pre>
@@ -35,7 +35,7 @@ docpad install gist #embed code snippets from GitHub Gist
 docpad run #start the process that monitors file changes and refreshes the browser
 </pre>
 
-Here is a [raw](https://gist.githubusercontent.com/MakerStan/9865462/raw/install-docpad-and-plugins.sh) version of the script above.
+Here is a [raw](https://gist.githubusercontent.com/StanGeorge/9865462/raw/install-docpad-and-plugins.sh) version of the script above.
 
 The [Beginner Guide](http://docpad.org/docs/begin) has a good explanation of why we need the plugins. Here is a short description of what they do:
 1. [Eco](https://github.com/sstephenson/eco) lets us have templates so we can reuse code
@@ -44,9 +44,9 @@ The [Beginner Guide](http://docpad.org/docs/begin) has a good explanation of why
 4. [CoffeeScript](http://coffeescript.org/) is a simple language that compiles into fast or faster than the equivalent handwritten JavaScript.
 5. [Gist](https://gist.github.com) lets you host snippets of code on GitHub and embed them in your website or blog.
 
-The next step is to create a default layout for your website/blog. The layout this website uses is [default.html.eco](https://github.com/MakerStan/make/blob/master/src/layouts/default.html.eco). Place this file under your-website-folder/src/layouts/.
+The next step is to create a default layout for your website/blog. The layout this website uses is [default.html.eco](https://github.com/StanGeorge/make/blob/master/src/layouts/default.html.eco). Place this file under your-website-folder/src/layouts/.
 
-Once you define the layout, you can create individual pages/posts. The pages/posts can be written in markdown and are placed under yout-website-directory/src/documents/ . An example is the [index.html.md](https://raw.githubusercontent.com/MakerStan/make/master/src/documents/index.html.md). This file extension tells docpad that this is a markdown file that needs to be compiled into an html file. The html files are placed under your-website-directory/out/.
+Once you define the layout, you can create individual pages/posts. The pages/posts can be written in markdown and are placed under yout-website-directory/src/documents/ . An example is the [index.html.md](https://raw.githubusercontent.com/StanGeorge/make/master/src/documents/index.html.md). This file extension tells docpad that this is a markdown file that needs to be compiled into an html file. The html files are placed under your-website-directory/out/.
 
 A couple of things to note are the variables such as 'title', 'author', 'preview' etc.in index.html.md. I use these in default.html.eco as <%= @document.title %>  etc. A big advantage here is that if I choose to change the layout of the file, I need to update only one file (default.html.eco) and all the pages reflect the change.
 

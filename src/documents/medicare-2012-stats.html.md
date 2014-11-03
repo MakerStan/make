@@ -1,6 +1,6 @@
 ---
 title: "Analysis of Medicare 2012 Data"
-author: "MakerStan"
+author: "StanGeorge"
 created: "April 13, 2013"
 edited: "April 13, 2013"
 layout: "default"

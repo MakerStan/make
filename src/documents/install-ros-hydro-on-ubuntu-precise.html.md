@@ -1,6 +1,6 @@
 ---
 title: "Install Robot Operating System (ROS) Hydro on Ubuntu 12.04 LTS (Precise)"
-author: "MakerStan"
+author: "StanGeorge"
 created: "March 27, 2014"
 edited: "March 31, 2014"
 layout: "default"
@@ -31,7 +31,7 @@ echo "source /opt/ros/hydro/setup.bash" >> ~/.bashrc
 source ~/.bashrc
 sudo apt-get install python-rosinstall
 </pre>
-Here is the [raw](https://gist.githubusercontent.com/MakerStan/9862679/raw/install-ros-hydro-on-ubuntu-precise.sh) version of the script above.
+Here is the [raw](https://gist.githubusercontent.com/StanGeorge/9862679/raw/install-ros-hydro-on-ubuntu-precise.sh) version of the script above.
 
 I ran this command to for a basic check to see if ROS was installed correctly: <code>rospack find opencv2</code>
 

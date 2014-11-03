@@ -1,6 +1,6 @@
 ---
 title: "Grunt: Install and Setup"
-author: "MakerStan"
+author: "StanGeorge"
 created: "April 5, 2014"
 edited: "April 5, 2014"
 layout: "default"

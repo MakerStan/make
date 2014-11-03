@@ -1,6 +1,6 @@
 ---
 title: "Find dead links on your website"
-author: "MakerStan"
+author: "StanGeorge"
 created: "April 6, 2014"
 edited: "April 6, 2014"
 layout: "default"

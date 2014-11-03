@@ -1,6 +1,6 @@
 ---
 title: "Programming with AVR"
-author: "MakerStan"
+author: "StanGeorge"
 created: "Match 31, 2014"
 edited: "March 31, 2014"
 layout: "default"

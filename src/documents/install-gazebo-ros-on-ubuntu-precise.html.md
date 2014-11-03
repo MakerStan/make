@@ -1,6 +1,6 @@
 ---
 title: "Install Gazebo Simulator (v1.9) for Robot Operating System (ROS)  on Ubuntu 12.04 LTS (Precise)"
-author: "MakerStan"
+author: "StanGeorge"
 created: "March 27, 2014"
 edited: "March 31, 2014"
 layout: "default"
@@ -19,7 +19,7 @@ wget http://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
 sudo apt-get update
 sudo apt-get install gazebo
 </pre>
-Here is the [raw](https://gist.githubusercontent.com/MakerStan/9862679/raw/install-gazebo-ros-on-ubuntu-precise.sh) version of the script above.
+Here is the [raw](https://gist.githubusercontent.com/StanGeorge/9862679/raw/install-gazebo-ros-on-ubuntu-precise.sh) version of the script above.
 
 Check your installation using the following.
 <pre>
@@ -27,13 +27,13 @@ gzserver # This will start the server
 gzclient # This will start the GUI
 gazebo # This command should openup a GUI if Gazebo was installed correctly.
 </pre>
-Here is the [raw](https://gist.githubusercontent.com/MakerStan/9862679/raw//check-gazebo-install.sh) version of the script above.
+Here is the [raw](https://gist.githubusercontent.com/StanGeorge/9862679/raw//check-gazebo-install.sh) version of the script above.
 
 For Gazebo with ROS, do the following.
 <pre>
 sudo apt-get install ros-hydro-gazebo-ros-pkgs ros-hydro-gazebo-ros-control
 </pre>
-Here is the [raw](https://gist.githubusercontent.com/MakerStan/9862679/raw//install-gazebo-ros.sh) version of the script above.
+Here is the [raw](https://gist.githubusercontent.com/StanGeorge/9862679/raw//install-gazebo-ros.sh) version of the script above.
 
 **External Links**
 1. Click [this link](http://gazebosim.org/wiki/1.9/install) for detailed instructions on Gazebo installation.

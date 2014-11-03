@@ -1,6 +1,6 @@
 ---
 title: "Edit Amazon S3 Files on Linux"
-author: "MakerStan"
+author: "StanGeorge"
 created: "March 24, 2014"
 edited: "March 27, 2014"
 layout: "default"
@@ -29,7 +29,7 @@ aws s3 sync s3://make.stanleygeorge.com .
 *\#The 'grants' option grants read permissions on the files to everyone.*
 aws s3 sync . s3://make.stanleygeorge.com --grants read=uri=http://acs.amazonaws.com/groups/global/AllUsers
 </pre>
-Here is the [raw](https://gist.githubusercontent.com/MakerStan/9865462/raw/install-amazon-cli.sh) version of the script above.
+Here is the [raw](https://gist.githubusercontent.com/StanGeorge/9865462/raw/install-amazon-cli.sh) version of the script above.
 
 If you need to manage a lot of pages, a tool like DocPad will help. See [this post](static-website-docpad.html) on how to create a static website or blog with Docpad.
 

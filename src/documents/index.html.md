@@ -1,6 +1,6 @@
 ---
 title: "Be a Maker"
-author: "MakerStan"
+author: "StanGeorge"
 created: "March 24, 2014"
 edited: "April 4, 2014"
 layout: "default"
