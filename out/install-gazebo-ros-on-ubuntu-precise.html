@@ -7,12 +7,8 @@
 <meta name=author content="MakerStan">
 <title>Install Gazebo Simulator (v1.9) for Robot Operating System (ROS)  on Ubuntu 12.04 LTS (Precise) | Make</title>
 <link rel="shortcut icon" href="ico/favicon.ico" />
-<meta name="generator" content="DocPad v6.64.0" />
-<style >html.wait {
-	cursor: wait !important;
-	opacity: 0;
-	transition: opacity 0.5s ease;
-}</style>
+<meta name="generator" content="DocPad v6.69.1" />
+
 <link rel=stylesheet href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
 <link href="http://d27jzba8aj5ptt.cloudfront.net/jumbotron-narrow.min.css" rel=stylesheet>
 <!--[if lt IE 9]>
@@ -60,52 +56,7 @@ Here is the <a href="https://gist.githubusercontent.com/MakerStan/9862679/raw//i
 <li>Click <a href="http://gazebosim.org/wiki/Tutorials/1.9/Installing_gazebo_ros_Packages">this link</a> for Gazebo with ROS.</li>
 </ol>
 
-      <script >(function(){
-	/* Did we just livereload? */
-var log = !!(localStorage && console && console.log && true);
-if ( log && localStorage.getItem('/docpad-livereload/reloaded') === 'yes' ) {
-	localStorage.removeItem('/docpad-livereload/reloaded');
-	console.log('LiveReload completed at', new Date())
-}
-
-/* Listen for the regenerated event and perform a reload of the page when the event occurs */
-var listen = function(){
-	var primus = new Primus('/docpad-livereload');
-	primus.on('data', function(data){
-		if ( data && data.message ) {
-			if ( data.message === 'generateBefore' ) {
-				if ( log ) {
-					console.log('LiveReload started at', new Date());
-				}
-				if ( typeof document.getElementsByTagName !== 'undefined' ) {
-	document.getElementsByTagName('html')[0].className += ' wait';
-}
-			}
-			else if ( data.message === 'generateAfter' ) {
-				if ( log ) {
-					localStorage.setItem('/docpad-livereload/reloaded', 'yes');
-				}
-				document.location.reload();
-			}
-		}
-	});
-};
-	/* Inject socket into our page */
-var inject = function(){
-	var t = document.createElement('script');
-	t.type = 'text/javascript';
-	t.async = 'async';
-	t.src = '/primus/primus.js';
-	t.onload = listen;
-	var s = document.getElementsByTagName('script')[0];
-	s.parentNode.insertBefore(t, s);
-};
-	if ( typeof Primus !== 'undefined' ) {
-		listen();
-	} else {
-		inject();
-	}
-})();</script>
+      
     </p>
     <div class=footer>
       Created by <a href="https://github.com/MakerStan">MakerStan</a> on March 27, 2014. Last updated on March 31, 2014.<br />
